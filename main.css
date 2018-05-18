@@ -1,0 +1,348 @@
+body{
+	margin: 0px;
+	padding: 0px;
+}
+
+nav{
+	background: transparent;
+	height: 50px
+}
+
+#banner{
+	background: transparent;
+	height: 700px;
+	margin-bottom: 0px;
+}
+
+nav ul{
+	list-style: none;
+	margin: 0;
+	float: right;
+}
+
+nav ul li , nav.logo{
+	display: inline-block;
+	line-height: 50px;
+	margin-right: 20px;
+}
+
+nav ul li a{
+	line-height: 50px;
+	text-decoration: none;
+	display: inline-block;
+	height: inherit;
+	color: #fff;
+}
+
+#banner .inner{
+	max.width: 300px;
+	text-align: center;
+	margin: 0 auto;
+	position: relative;
+	top: 160px;
+}
+
+#banner .inner h1{
+	margin: 0;
+}
+
+button{
+	border: none;
+	background: #089DB0;
+	color: #eee;
+	padding:10px;
+}
+
+.more{
+	margin-top:250px;
+}
+
+.inner .hr{
+	width: 20%;
+	border-color: #089DB0;
+}
+
+.sub-heading{
+	font-size: 18px;
+	line-height: 30px;
+	margin: 30px;
+}
+
+.logo{
+	float: left;
+	padding: 10px;
+	font-size: 20px;
+	font-weight: 800;
+	letter-spacing: 1px;
+}
+
+.logo a{
+	color: #fff;
+	text-decoration: none;
+}
+
+h2{
+	font-size: 30px;
+}
+
+.wrapper{
+	max-width: 1080px;
+	margin: 0 auto;
+}
+
+.green-section{
+	text-align: center;
+	background: #089DB0;
+	color: #fff;
+	padding: 50px 0;
+}
+
+.hr{
+	
+	height: 0px;
+	margin: 20px auto;
+	border: 0.5px solid #000;
+	width:50%
+}
+
+.icon-group{
+	margin-top:50px;
+}
+.icon{
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	background: #0d6f77;
+	transform: rotate(45deg);
+	margin:20px;
+}
+
+.img-section{
+	width:45%;
+}
+
+.img-section img{
+	width:100%;
+}
+
+.text-section{
+	width: 55%;
+}
+
+.gray-section{
+	background:#252F34;
+	color:#fff;
+}
+
+.article-preview > div{
+	float: left;
+	font-size: 0px;
+}
+
+.article-preview:after{
+	content:'';
+	display: block;
+	clear: both;
+}
+
+.text-section{
+	position: relative;
+	top: 50px;
+	left:50px;
+}
+
+.text-section h2{
+	margin-bottom:20px;
+}
+
+.text-section p{
+	font-size: 18px;
+	letter-spacing: 1px;
+}
+
+.text-section .sub-heading{
+	font-size: 22px;
+	margin: 10px 0px;
+}
+
+.text-section > *{
+	max-width: 90%;
+}
+
+.article-preview:nth-child(odd){
+	background-color: rgba(255,255,255,0.05);
+}
+.purple-section{
+	background: #3f3965;
+	color: #fff;
+	padding: 80px;
+}
+
+.purple-section .heading-wrapper{
+	text-align: center;
+}
+
+.card{
+	float: left;
+	width: 50%;
+	min-height: 300px;
+	padding:50px;
+	box-sizing:border-box;
+	/*border:1px solid white;*/
+}
+
+.clearfix:after{
+	content:'';
+	display: block;
+	clear: both;
+}
+
+h3{
+	font-size: 24px;
+}
+
+p{
+	font-size: 18px;
+	letter-spacing: 1px;
+}
+
+.card:first-child{
+	background: rgba(0,0,0,0.04);
+}
+
+.card:nth-child(2){
+	background:rgba(0,0,0,0.08);
+}
+.card:nth-child(3){
+	background:rgba(0,0,0,0.12);
+}
+.card:nth-child(4){
+	background:rgba(0,0,0,0.16);
+}
+.card:nth-child(5){
+	background:rgba(0,0,0,0.2);
+}
+.card:nth-child(6){
+	background:rgba(0,0,0,0.24);
+}
+
+footer{
+	background:#333;
+	color:#fff;
+	min-height: 150px;
+	text-align: center;
+}
+
+ul{
+	margin:0;
+}
+
+.share-group{
+	display: block;
+	width: 1080px;
+	margin: 0px auto;
+	padding: 20px;
+}
+
+.share-group li{
+	display: inline-block;
+	padding: 10px;
+}
+
+.copy{
+	margin:0px;
+	padding-bottom: 0px;
+}
+
+.main-wrapper{
+	background: #444 url(images/jsx2.jpg);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position:center center;
+	overflow: hidden;
+}
+
+header{
+	background:rgba(0,0,0,0.3);
+}
+
+#sidebar{
+	position:fixed;
+	height: 600px;
+	top: 0;
+	bottom: 0;
+	right: -300px;
+	width:300px;
+	background: #333;
+	transition: right 0.5s;
+}
+
+#sidebar ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#sidebar ul a{
+	display: inline-block;
+	padding: 20px 20px;
+	text-decoration: none;
+	color: #fff;
+	width: 100%;
+	
+}
+#sidebar ul a:hover{
+	background: #444;
+}
+
+.mask{
+	position:fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.3);
+	display: none;
+}
+
+.back-to-top{
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	border: 1px solid #888;
+	background: transparent;
+}
+
+/*article css*/
+
+.article #banner{
+	height: 450px;
+}
+
+.article h1{
+	border: none;
+}
+.article #banner .inner{
+	top: 150px;
+}
+
+.content_wrapper{
+	width: 1080px;
+	margin: 0 auto;
+}
+
+.article .content{
+	background: #fff;
+}
+
+.article{
+	line-height: 2;
+	padding: 10px 0;
+}
+
+.article_info{
+	font-size: 14px;
+	color: #888;
+	padding: 15px 0px;
+}

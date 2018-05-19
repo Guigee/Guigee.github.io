@@ -23,7 +23,9 @@
 					var imgTitle = this.myTitle?"<br/>"+this.myTitle: "";
 					var tooltip = "<div id='tooltip'><img src='"+this.href+"' alt='预览图'/></div>";	//创建Div元素
 					$("body").append(tooltip);	//将div元素追加到文档中
-					$("#tooltip").css({"top": (e.pageY+y)+"px",
+//					console.log(e);
+					$("#tooltip").css({"position": "absolute",
+										"top": (e.pageY+y) +"px",
 				                        "left":(e.pageX+x)+"px"}).show("fast");	//设置X坐标和Y坐标，并且显示
 				}).mouseout(function(){
 					this.title = this.myTitle;

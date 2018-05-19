@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Page 30</title>
+		<style>
+			div,span,p{
+				width: 140px;
+				height: 140px;
+				margin: 5px;
+				background: #aaa;
+				border: 1px solid #000;
+				float: left;
+				font-size: 17px;
+				font-family: verdana;
+			}
+			
+			.mini{
+				width: 55px;
+				height: 55px;
+				background-color: #aaa;
+				font-size: 12px;
+			}
+			
+			.hide{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="one" id="one">
+			id为one, class为one的div.
+			<div class="mini">class为mini</div>
+		</div>
+		<div class="one" id="two" title="test">
+			id为two， class为one，title为test的div.
+			<div class="mini" title="other">class为mini,title为other</div>
+			<div class="mini" title="test">class为mini,title为test</div>
+		</div>
+		<div class="one">
+			<div class="mini">class为mini</div>
+			<div class="mini">class为mini</div>
+			<div class="mini">class为mini</div>
+			<div class="mini"></div>
+		</div>
+		<div class="one">
+			<div class="mini">class为mini</div>
+			<div class="mini">class为mini</div>
+			<div class="mini">class为mini</div>
+			<div class="mini" title="tesst">class为mini,title为tesst</div>
+		</div>
+		<div style="display:none;" class="none">style的display为"none"的div</div>
+		<div class="hide">class为"hide"的div</div>
+		<div>
+			包含input的type为"hidden"的div<input type="hidden" size="8" />
+		</div>
+		<span id="mover">正在执行动画的span元素</span>
+		<script src="js/jquery-3.3.1.js"></script>
+		<script>
+			//基本选择器
+			$("#one").css("background","#4579af");
+			$(".mini").css("background","#4579af");
+			$("div").css("background","#4579af");
+			//$("*").css("background","#4579af");
+			//层次选择器
+			$("span,#two").css("background","wheat");
+			//$(".one ~ div").css("background","red");	//与nextAll()方法等价    $(".one").nextAll("div").css("background","red")
+			//$(".one + div").css("background","red");	//与next()方法等价    $(".one").next("div").css("background","red")
+			//$("#two").siblings("div").css("background","red");	//选取#two所有的同辈<div>元素，无论前后位置
+			//内容过滤选择器
+			$("div:has(.mini)").css("background","#red");
+			$("div:hidden").show(3000);			//显示隐藏的<div>元素
+			//子元素过滤选择器
+			//$("div.one :nth-child(2)").css("background","#008000");		//改变class为one的<div>父元素下的第二个子元素的背景色
+			$("div.one :first-child").css("background","#008000");		//改变<div>父元素下的第一个子元素背景色
+			
+		</script>
+		
+	</body>
+</html>

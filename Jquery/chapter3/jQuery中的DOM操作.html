@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>page 62</title>
+		<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+		<style>
+			body{
+				margin: 0;
+				padding: 0;
+			}
+			li{
+				margin: 0;
+				padding: 5px 0px;
+				width: 80px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p title="fruit" id="one">喜欢的水果？</p>
+			<ul>
+				<li>苹果</li>
+				<li>橘子</li>
+				<li>菠萝</li>
+			</ul>
+		</div>
+		<script>
+			var $fr = $("div ul li:eq(1)");
+			var fr_txt = $fr.text();
+			//alert(fr_txt);
+			
+			var $part = $("p");
+			var part_txt = $part.attr("id");
+			//alert(part_txt);
+			
+			var $li_1 = $("<li>香蕉</li>");
+			var $li_2 = $("<li>西瓜</li>");
+			var $li_3 = $("<li>其他</li>");
+			var $af = $("ul li:eq(1)");
+			$("ul").append($li_1).prepend($li_2);
+			$li_3.insertAfter($af);
+			
+			$("ul li").click(function(){
+				//alert($(this).text());
+				$(this).clone(true).appendTo("ul");
+			})
+			var $li = $("ul li:eq(1)").detach();
+			$li.appendTo("ul");	//标签需要引号，而变量不需要。
+			
+			$("ul li:eq(1)").empty();
+			
+			$("p").replaceWith("<strong>你最不喜欢的水果</strong>");
+		</script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html"; charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript">
+			$(document).ready(function(){
+				var $cr = $("#cr");					//Jquery对象
+				//var cr = $cr[0];					//DOM对象
+				
+				$cr.click(function(){
+					//if(tr.check){alert(...)}				//DOM判断方式
+					if($cr.is(":checked")){					//jquery判断方式
+						alert("感谢您的支持！");
+					}
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<input type="checkbox" id="cr"/><label for="cr">我已阅读</label>
+	</body>
+</html>

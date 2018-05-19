@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>page 91</title>
+		<style>
+			ul li img{
+				width:300px;
+				float: left;
+			}
+			ul li{
+				list-style: none;
+			}
+		</style>
+		<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+		<script>
+			$(function(){
+				var x = 10;
+				var y = 20;
+				$(".tooltip").mouseover(function(e){
+					this.myTitle = this.title;
+					this.title = "";
+					var imgTitle = this.myTitle?"<br/>"+this.myTitle: "";
+					var tooltip = "<div id='tooltip'><img src='"+this.href+"' alt='预览图'/></div>";	//创建Div元素
+					$("body").append(tooltip);	//将div元素追加到文档中
+					$("#tooltip").css({"top": (e.pageY+y)+"px",
+				                        "left":(e.pageX+x)+"px"}).show("fast");	//设置X坐标和Y坐标，并且显示
+				}).mouseout(function(){
+					this.title = this.myTitle;
+					$("#tooltip").remove();	//移除
+				}).mousemove(function(e){
+					$("#tooltip").css({
+										"top":(e.pageY+y)+"px",
+										"left":(e.pageX+x)+"px"
+					});		
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<div>
+			<p><a href="#" class="tooltip" title="超链接提示1">提示1.</a></p>
+			<p><a href="#" class="tooltip" title="超链接提示2">提示2.</a></p>
+			<p><a href="#" title="自带提示1">自带提示1.</a></p>
+			<p><a href="#" title="自带提示1">自带提示1.</a></p>
+		</div>
+		
+		<ul>
+			<li><a href="../../images/2.jpeg" class="tooltip" title="test2">
+				<img src="../../images/2.jpeg" alt="test2"></a>
+			</li>
+			<li><a href="../../images/1.jpeg" class="tooltip" title="test1">
+				<img src="../../images/1.jpeg" alt="test1"></a>
+			</li>
+			<li><a href="../../images/3.jpeg" class="tooltip" title="test3">
+				<img src="../../images/3.jpeg" alt="test3"></a>
+			</li>
+		</ul>
+	</body>
+</html>

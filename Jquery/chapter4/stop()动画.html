@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>page 128</title>
+		<style>
+			#panel{
+				position: relative;
+				width: 100px;
+				height: 100px;
+				background: #AAAAAA;
+				border: 1px solid #000000;
+				cursor: pointer;
+			}
+		</style>
+		<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+		<script>
+			$(function(){
+				$("#panel").hover(function(){
+					$(this).stop(true).animate({height: "150", width: "300"},200)
+									.animate({width: "300"},300);	
+					}, function(){
+					$(this).stop(true).animate({height: "22", width: "60"},300)
+									.animate({width: "60"},300);	//stop(true)会把当前元素接下来未被执行的动画队列清空
+				});													
+			})
+		</script>
+	</head>
+	<body>
+		<div id="panel"></div>
+	</body>
+</html>

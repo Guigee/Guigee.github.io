@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>5.1表单应用 page 141</title>
+		<style>
+			input:focus , textarea:focus{
+				border: 1px solid #f00;
+				background: #fee;
+			}
+		</style>
+		<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+		<script>
+			$(function(){
+				var $comment = $("#comment");
+				$(".bigger").click(function(){
+					if(!$comment.is(":animated")){	//判断是否处于动画
+						
+					
+						if($comment.height()<500){
+							$comment.animate({height:"+=50"},300);
+						}
+					}
+				});
+				
+				$(".smaller").click(function(){
+					if(!$comment.is(":animated")){
+						if($comment.height()>50){
+							$comment.animate({height:"-=50"},300);
+						}
+					}
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<from action="#" method="POST" id="regForm">
+			<fieldset>
+				<legend>个人基本信息</legend>
+				<div>
+					<label for="username">名称</label>
+					<input id="username" type="text">
+				</div>
+				<div>
+					<label for="pass">密码</label>
+					<input id="pass" type="password">
+				</div>
+				<div class="msg">
+					
+					<label for="msg">详细信息</label>
+					<div class="msg_caption">
+						<span class="bigger">放大</span>
+						<span class="smaller">缩小</span>
+					</div>
+					
+					<div>
+						<textarea id="comment" rows="12" cols="30">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid veritatis quasi itaque eius dolorem alias accusamus enim asperiores eaque commodi libero obcaecati quis reiciendis illum nostrum possimus sint quisquam facere!
+						</textarea>
+					</div>
+				</div>
+			</fieldset>
+		</from>
+	</body>
+</html>

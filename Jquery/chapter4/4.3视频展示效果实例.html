@@ -5,7 +5,36 @@
 		<title>page 134</title>
 		<link rel="stylesheet" href="style.css">
 		<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
-		
+		<script>
+			$(function(){
+				var page = 1;
+				var i = 4;
+				$("span .next").click(function(){
+					var $parent = $(this).parents("div.v_show");
+					var $v_show = $parent.find("div.v_content_list");
+					var $v_content = $parent.find("div.v_content");
+					
+					var v_width = $v_content.width();
+					var len = $v_show.find("li").length;
+					var page_count = Math.ceil(len/i);
+				
+				if(!$v_show.is(":animated")){
+					
+					if(page==page_count){
+						$v_show.animate({left:"0px"},"slow");
+						
+						page=1;
+					}else{
+						$v_show.animate({ left:"-="+v_width},"slow");
+						
+						page++;
+					}
+					$parent.find("span").eq((page-1)).addClass("current").siblings().removeClass("current");
+				}
+				
+				})
+			})//失败
+		</script>
 	</head>
 	<body>
 		<div class="v_show">
@@ -36,9 +65,19 @@
 						<li><a><img src="../../images/6.jpeg" alt="6" /></a><h4><a href="#">第三集</a></h4><span>
 							播放：<em>***</em>
 						</span></li>
+						<li><a><img src="../../images/4.jpeg" alt="4" /></a><h4><a href="#">第四集</a></h4><span>
+							播放：<em>***</em>
+						</span></li>
+						<li><a><img src="../../images/5.jpeg" alt="5" /></a><h4><a href="#">第五集</a></h4><span>
+							播放：<em>***</em>
+						</span></li>
+						<li><a><img src="../../images/5.jpeg" alt="5" /></a><h4><a href="#">第五集</a></h4><span>
+							播放：<em>***</em>
+						</span></li>
 					</ul>
 				</div>
 			</div>
 		</div>
+		
 	</body>
 </html>

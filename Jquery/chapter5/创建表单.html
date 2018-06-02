@@ -8,6 +8,9 @@
 				border: 1px solid #f00;
 				background: #fee;
 			}
+			.bigger , .smaller{
+				cursor: pointer;
+			}
 		</style>
 		<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
 		<script>
@@ -18,7 +21,7 @@
 						
 					
 						if($comment.height()<500){
-							$comment.animate({height:"+=50"},300);
+							$comment.animate({height :"-=50"},300);
 						}
 					}
 				});
@@ -26,9 +29,32 @@
 				$(".smaller").click(function(){
 					if(!$comment.is(":animated")){
 						if($comment.height()>50){
-							$comment.animate({height:"-=50"},300);
+							$comment.animate({height :"+=50"},300);
 						}
 					}
+				});
+				
+				$("#checkedall").click(function(){
+					if(this.checked){
+						$("[name=items]:checkbox").attr("checked",true);
+					}
+					else{
+						$("[name=items]:checkbox").attr("checked",false);
+					}
+				});
+	
+				$("#checkrev").click(function(){
+					$("[name=items]:checkbox").each(function(){
+						this.checked = !this.checked;	//each() 方法规定为每个匹配元素规定运行的函数。
+					})
+				});
+				$("#send").click(function(){
+					var str="你选中的是: \r\n";
+					$("[name=items]:checkbox:checked").each(function(){
+						str += $(this).val()+"\r\n";
+						
+					});
+					alert(str);
 				});
 			})
 		</script>
@@ -49,8 +75,8 @@
 					
 					<label for="msg">详细信息</label>
 					<div class="msg_caption">
-						<span class="bigger">放大</span>
-						<span class="smaller">缩小</span>
+						<span class="bigger">向上</span>
+						<span class="smaller">向下</span>
 					</div>
 					
 					<div>
@@ -60,6 +86,15 @@
 					</div>
 				</div>
 			</fieldset>
+			
+			你钟意的基佬类型？<br />
+			<input type="checkbox" name="items" value="草莓嘤嘤怪" />草莓嘤嘤怪
+			<input type="checkbox" name="items" value="芒果嘤嘤怪" />芒果嘤嘤怪
+			<input type="checkbox" name="items" value="西瓜嘤嘤怪" />西瓜嘤嘤怪
+			<input type="checkbox" name="items" value="香蕉嘤嘤怪" />香蕉嘤嘤怪<br/>
+			<input type="checkbox" id="checkedall"  />全选/全不选<br />
+			<input type="button" id="checkrev" value="反选" />
+			<input type="button" id ="send" value="提交" />
 		</from>
 	</body>
 </html>

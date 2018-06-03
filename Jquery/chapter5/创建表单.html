@@ -21,7 +21,7 @@
 						
 					
 						if($comment.height()<500){
-							$comment.animate({height :"-=50"},300);
+							$comment.animate({height :"+=50"},300);
 						}
 					}
 				});
@@ -29,7 +29,7 @@
 				$(".smaller").click(function(){
 					if(!$comment.is(":animated")){
 						if($comment.height()>50){
-							$comment.animate({height :"+=50"},300);
+							$comment.animate({height :"-=50"},300);
 						}
 					}
 				});
@@ -49,9 +49,9 @@
 					})
 				});
 				$("#send").click(function(){
-					var str="你选中的是: \r\n";
+					var str="你选中的是: \n";
 					$("[name=items]:checkbox:checked").each(function(){
-						str += $(this).val()+"\r\n";
+						str += $(this).val()+"\n";
 						
 					});
 					alert(str);

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>下选框应用 Page149</title>
+		<style>
+			#select1{
+				width: 100px;
+				height: 160px;
+			}
+			#select2{
+				margin-left: 20px;
+				width: 100px;
+				height: 160px;
+			}
+			.centent{
+				float: left;
+			}
+			.button{
+				margin: 10px 5px;
+				font-size: 10px;
+			}
+			#buu{
+				margin-left: 20px;
+			}
+			span{
+				cursor: pointer;
+			}
+		</style>
+		<script src="../js/jquery-3.3.1.js" type="text/javascript"></script>
+		<script>
+			$(function(){
+				//添加操作
+				$("#add").click(function(){
+					var $options = $("#select1 option:selected");
+					$options.appendTo("#select2");
+				})
+			
+				$("#add_all").click(function(){
+					var $options = $("#select1 option");
+					$options.appendTo("#select2");
+				})
+				
+				$("#select1").dblclick(function(){
+					var $options = $("option:selected",this);
+					$options.appendTo("#select2");
+				})
+				//删除操作
+				$("#remove").click(function(){
+					var $options = $("#select2 option:selected");
+					$options.appendTo("#select1");
+				})
+			
+				$("#remove_all").click(function(){
+					var $options = $("#select2 option");
+					$options.appendTo("#select1");
+				})
+				
+				$("#select2").dblclick(function(){
+					var $options = $("option:selected",this);
+					$options.appendTo("#select1");
+				})
+			})
+			
+		</script>
+	</head>
+	
+	<body>
+		<div class="centent">
+			<select multiple id="select1">
+				<option value="1">选项1</option>
+				<option value="2">选项2</option>
+				<option value="3">选项3</option>
+				<option value="4">选项4</option>
+				<option value="5">选项5</option>
+				<option value="6">选项6</option>
+			</select>
+			
+			<div class="button">
+				<span id="add">选中添加到右边&gt;&gt;</span><br />
+				<span id="add_all">全部添加到右边&gt;&gt;</span>
+			</div>
+		</div>
+		
+		<div class="centent">
+			<select multiple id="select2"></select>
+			<div class="button" id="buu">
+				<span id="remove">&lt;&lt;选中删除到左边</span><br />
+				<span id="remove_all">&lt;&lt;全部删除到左边</span>
+			</div>
+		</div>
+	</body>
+</html>

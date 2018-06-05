@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>5.2.1表单应用</title>
+		<style>
+			table{
+				border:0;
+				border-collapse:collapse;
+			}
+			td{ 
+				font:normal 12px/17px Arial;
+				padding:2px;
+				width:100px;
+			}
+			th{ 
+				font:bold 12px/17px Arial;
+				text-align:left;
+				padding:4px;
+				border-bottom:1px solid #333;
+			}
+			.even{ 
+				background:#FFF38F;
+			}
+			.odd{ 
+				background:#FFFFEE;
+			}  
+			.selected{ 
+				background:#FF6500;
+				color:#fff;
+			}
+		</style>
+		<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+		<script>
+			$(function(){
+				$("tbody>tr:odd").addClass("odd");
+				$("tbody>tr:even").addClass("even");
+				
+//				$("tr:contains('李四')").addClass("selected");
+				
+				$("tbody>tr").click(function(){
+					$(this).addClass("selected").siblings().removeClass("selected");//.end().attr("checked",true);
+				})
+				
+				$("tr.parent").click(function(){
+					$(this).toggleClass("selected").siblings(".child"+this.id).toggle(100);
+				}).click();
+				
+				$("#filterName").keyup(function(){
+					$("table tbody tr").hide().filter(":contains('"+( $(this).val() )+"')").show();
+				}).keyup();
+				
+			})
+		</script>
+	</head>
+	
+	<body>
+		<label>筛选：<input type="text" id="filterName"/></label>
+		<table>
+			<thead>
+				<tr>
+					<th>姓名</th>
+					<th>性别</th>
+					<th>暂住地</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="parent" id="row01"><td colspan="3">前台设计组</td></tr>
+				<tr class="childrow01">
+					<td>张山</td>
+					<td>男</td>
+					<td>浙江宁波</td>
+				</tr>
+				<tr class="childrow01">
+					<td>李四</td>
+					<td>男</td>
+					<td>浙江宁波</td>
+				</tr>
+				
+				<tr class="parent" id="row02"><td colspan="3">前台开发组</td></tr>
+				<tr class="childrow02">
+					<td>王二</td>
+					<td>男</td>
+					<td>浙江宁波</td>
+				</tr>
+				<tr class="childrow02">
+					<td>赵六</td>
+					<td>男</td>
+					<td>浙江宁波</td>
+				</tr>
+			</tbody>
+		</table>
+		
+	</body>
+</html>

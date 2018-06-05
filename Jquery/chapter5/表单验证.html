@@ -64,22 +64,22 @@
 					//将光标定位在文本框上，keyup（）能在用户每次松开按键时触发）
 				})
 				
-//				$("#send").click(function(){
-//					$("form :input.required").trigger("blur");	
-//					var numerror = $("from .onError").length;
-//					if(numerror){
-//						rerurn false;
-//					}
-//					else{
-//						alert("注册成功！");
-//					}
-//				});失败
-				
 				$("#send").click(function(){
-					if(this.value.length!=0){
+					$("form :input.required").trigger("blur");	
+					var numerror = $("from .onError").length;
+					if(numerror){
+						return false;
+					}
+					else{
 						alert("注册成功！");
 					}
-				})
+				});
+				
+//				$("#send").click(function(){
+//					if(this.value.length!=0){
+//						alert("注册成功！");
+//					}
+//				})
 				$("#res").click(function(){
 					$(".rem").remove();
 				});
